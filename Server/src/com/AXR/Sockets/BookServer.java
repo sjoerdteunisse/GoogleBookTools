@@ -11,7 +11,6 @@ import java.net.ServerSocket;
 import java.net.Socket;
 import java.net.UnknownHostException;
 
-import static java.net.InetAddress.*;
 
 public class BookServer {
 

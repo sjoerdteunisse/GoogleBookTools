@@ -13,10 +13,11 @@ import java.util.List;
 public class GoogleAPI {
 
     private final String server = "https://www.googleapis.com/";
-    private String api = "";
+    private String api;
 
 
     public GoogleAPI(String api){
+
         this.api = api;
     }
 
@@ -29,11 +30,11 @@ public class GoogleAPI {
             Reader reader = new InputStreamReader(input, "UTF-8");
             GoogleBookArray objectResult  = new Gson().fromJson(reader, GoogleBookArray.class);
 
-            result += "Title: " + objectResult.getBookDetail().getTitle() + "\n" + "Subtitle: " + objectResult.getBookDetail().getSubTitle();
+            result += "Title: " + objectResult.getBookDetail().getTitle() + ", " + "Subtitle: " + objectResult.getBookDetail().getSubTitle();
             List<String> authors = objectResult.getBookDetail().getAuthors();
 
             for (String author: authors) {
-                result += "Author: " + author  + "\n";
+                result += " Author: " + author  + ", ";
             }
 
         } catch (Exception e) {
